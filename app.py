@@ -84,7 +84,7 @@ spliter = RecursiveCharacterTextSplitter(
 # Junta todos os documentos num só texto e divide em chunks
 text_chunks = spliter.split_text("\n\n".join(documents))
 
-print(f"Total de pedaços de texto gerados: {len(text_chunks)}")
+print(f"Total de chunks de texto gerados: {len(text_chunks)}")
 
 # =========================================================
 # 3 - SPLITTER BASEADO EM TOKENS (para embeddings melhores)
@@ -132,7 +132,7 @@ chroma_collection.add(
 )
 
 count = chroma_collection.count()
-print(f"Total de pedaços de texto armazenados: {count}")
+print(f"Total de chunks (baseados em tokens) armazenados: {count}")
 
 # =========================================================
 # 5 - REESCRITA DA PERGUNTA COM CONTEXTO (RAG melhorado)
