@@ -1,19 +1,14 @@
 # RAG LOCAL COM PDFS + CHROMADB PERSISTENTE + OLLAMA
 
-Este projeto implementa um sistema RAG (Retrieval-Augmented Generation) local com suporte a chat inteligente, utilizando documentos PDF como base de conhecimento.
+Este projeto implementa um sistema **RAG (Retrieval-Augmented Generation)** local com suporte a chat, utilizando:
+
+- **PDFs** como base de conhecimento
+- **ChromaDB** com persistência local
+- **Sentence** Transformers para embeddings
+- **Ollama + Mistral** para gerar respostas  
+- **Histórico** de conversa (chat memory)
 
 O sistema combina recuperação semântica + geração com LLM para responder a perguntas de forma contextualizada.
-
----
-
-# 🧠 TECNOLOGIAS UTILIZADAS
-
-- Python
-- ChromaDB (PersistentClient)
-- Sentence Transformers (embeddings)
-- Ollama
-- Mistral LLM
-- PyPDF
 
 ---
 
@@ -24,6 +19,17 @@ Fluxo completo do sistema:
 PDFs → Extração de texto → Chunking → Embeddings → ChromaDB (persistente)
 
 Pergunta → HYDE (Query Expansion) → Embedding → Pesquisa semântica → Contexto + Histórico → Mistral → Resposta
+
+---
+
+# 📦 TECNOLOGIAS UTILIZADAS
+
+- Python
+- ChromaDB (PersistentClient)
+- Sentence Transformers (embeddings)
+- Ollama
+- Mistral LLM
+- PyPDF
 
 ---
 
@@ -173,6 +179,7 @@ python main.py
 ---
 
 **Tu:** o que ver no Porto.
+
 **Assistente:** Sim, visitar o Porto pode incluir:
 
 1. Visitas às pontes Dom Luís I e Maria Pia, que são famosas pelo seu design e oferecem belas vistas sobre o Rio Douro.
@@ -182,12 +189,16 @@ python main.py
 5. Visitar a Rua Santa Catarina, uma principal avenida comercial onde podemos encontrar várias lojas e restaurantes.
 
 **Tu:** O que recomendas para comer nessa cidade?
+
 **Assistente:** Sim, você está correto. O que recomendo para comer na cidade de Porto é tentar o Pastel de Nata, um tradicional delício português, que pode ser encontrado em vários locais da cidade, como a Livraria Lello. Também podem provar as especialidades culinárias da região norte de Portugal, como o Bacalhau à Brás e a Tripas à Moda do Porto. Além disso, recomendo tentar o famoso Vinho Verde da região e os doces tradicionais da cidade de Braga, como o Pudim Abade de Priscos e os Biscoitos Secos para acompanhar o Cha.
 
 **Tu:** Qual o aeroporto dessa cidade?
+
 **Assistente:** Sim, o Aeroporto Internacional Francisco Sá Carneiro serve a cidade do Porto, localizado no norte de Portugal. Para chegar ao centro da cidade, recomendo utilizar um taxi ou Uber. O custo de um taxi ronda os 25€ e demora cerca de 30 minutos a chegar ao centro, dependendo do trânsito. O Uber funciona bem em toda a cidade e pode ser uma boa opção para se deslocar de forma conveniente até o seu destino. 
 
---- # 🖼️ EXEMPLOS
+--- 
+
+# 🖼️ EXEMPLOS
 
 Ver pasta: 
 
@@ -197,8 +208,8 @@ Contém prints de conversas reais com o sistema.
 
 ---
 
-⚠️ 
-**Nota técnica**:
+⚠️ **Nota técnica**:
+
 Algumas respostas podem não ser totalmente precisas devido às limitações do pipeline RAG utilizado.
 
 Este comportamento pode ser causado por:
